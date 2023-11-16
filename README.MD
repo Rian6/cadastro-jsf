@@ -58,5 +58,3 @@ Executando `integracao-cnpj` individualmente
     mvn wildfly:run
 
 Lembre-se de configurar as conexões com o banco de dados conforme necessário.
-
-Com essas instruções, você deve ser capaz de executar as aplicações individualmente ou usando o Docker Compose. Certifique-se de ajustar as configurações de banco de dados conforme necessário para o ambiente em que as aplicações estão sendo executadas.
