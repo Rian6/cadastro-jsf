@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+        <h:head>
+
+        </h:head>
+        <h:body>
+            <div class="card">
+                <h:form>
+                    <h1>Cadastro de Cliente</h1>
+                    <div style="display: flex; flex-direction: row">
+                        <div style="display: flex; flex-direction: row; margin: 10px">
+                            <span class="ui-float-label">
+                                <p:inputMask
+                                    id="cnpj-input"
+                                    mask="99.999.999/9999-99"
+                                    value="#{cadastroClienteView.cnpj}"/>
+                                <p:outputLabel 
+                                    for="@previous" 
+                                    value="CNPJ"/>
+                            </span>
+                            <p:commandButton 
+                                icon="pi pi-search" 
+                                styleClass="rounded-button ui-button-success ui-button-flat" 
+                                update="@form"
+                                action="#{cadastroClienteView.buscarCnpj()}" />
+                        </div>
+                        <span class="ui-float-label" style="margin: 10px">
+                            <p:inputText 
+                                id="razaoSocial-input" 
+                                disabled="true"
+                                value="#{cadastroClienteView.razaoSocial}">
+                            </p:inputText>
+                            <p:outputLabel 
+                                for="@previous" 
+                                value="Razão Social"/>
+                        </span>
+                        <span class="ui-float-label" style="margin: 10px">
+                            <p:inputText 
+                                id="endereco-input" 
+                                value="#{cadastroClienteView.endereco}">
+                            </p:inputText>
+                            <p:outputLabel 
+                                for="@previous" 
+                                value="Endereço"/>
+                        </span>
+                        <span class="ui-float-label" style="margin: 10px">
+                            <p:inputMask 
+                                id="telefone-input"
+                                mask="(99) 99999-9999"
+                                value="#{cadastroClienteView.telefone}">
+                            </p:inputMask>
+                            <p:outputLabel 
+                                for="@previous" 
+                                value="Telefone"/>
+                        </span>
+                    </div>
+                    <div style="display: flex; flex-direction: row">
+                        <span class="ui-float-label" style="margin: 10px">
+                            <p:inputText 
+                                id="cidade-input"
+                                disabled="true"
+                                value="#{cadastroClienteView.cidade}">
+                            </p:inputText>
+                            <p:outputLabel 
+                                for="@previous" 
+                                value="Cidade"/>
+                        </span>
+                        <span class="ui-float-label" style="margin: 10px">
+                            <p:inputText 
+                                id="dataCadastro-input" 
+                                disabled="true"
+                                value="#{cadastroClienteView.dataCadastro}">
+                            </p:inputText>
+                            <p:outputLabel 
+                                for="@previous" 
+                                value="Data de Cadastro"/>
+                        </span>
+                        <span class="ui-float-label" style="margin: 10px">
+                            <p:inputText 
+                                id="situacaoCadastral-input" 
+                                disabled="true"
+                                value="#{cadastroClienteView.situacaoCadastral}">
+                            </p:inputText>
+                            <p:outputLabel 
+                                for="@previous" 
+                                value="Situação Cadastral"/>
+                        </span>
+                    </div>
+                    <p:commandButton 
+                        icon="pi pi-check" 
+                        value="Salvar"
+                        style="margin: 10px"
+                        styleClass="ui-button-raised ui-button-success"        
+                        update="@form"
+                        action="#{cadastroClienteView.salvar()}" />
+                </h:form>
+            </div>
+        </h:body>
+    </f:view>
+</html>
